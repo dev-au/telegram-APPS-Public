@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 aiogram = "==2.25.1"
 environs = "==9.5.0"
+loguru= "==0.7.0"
+
 
 [dev-packages]
 
