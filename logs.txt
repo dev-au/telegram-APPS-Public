@@ -1,0 +1,794 @@
+2023-11-18 20:20:35.548 | ERROR    | handlers.get_errors:error_handler:12 - Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+
+  File "D:\Telegram Apps\islamic_bot\app.py", line 29, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x0000027C5693C430>
+    │       └ <function run at 0x0000027C51B8B7F0>
+    └ <module 'asyncio' from 'C:\\Users\\isaye\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x0000027C56948BA0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x0000027C51B95240>
+           └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000027C51C49CF0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000027C51B96CB0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1906, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000027C51AF6200>
+    └ <Handle <TaskStepMethWrapper object at 0x0000027C56936E00>()>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x0000027C56936E00>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x0000027C56936E00>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x0000027C56936E00>()>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 308, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+                     │    │           │    │         └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,)}
+                     │    │           │    └ Update(update_id=251725203, message=Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(...
+                     │    │           └ <aiogram.client.bot.Bot object at 0x0000027C5673DB70>
+                     │    └ <function Dispatcher.feed_update at 0x0000027C56758670>
+                     └ <Dispatcher '0x27c5682da80'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 157, in feed_update
+    response = await self.update.wrap_outer_middleware(
+                     │    │      └ <function TelegramEventObserver.wrap_outer_middleware at 0x0000027C567330A0>
+                     │    └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000027C568F6BC0>
+                     └ <Dispatcher '0x27c5682da80'>
+
+> File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725203, message=Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(...
+                 └ functools.partial(<aiogram.dispatcher.middlewares.user_context.UserContextMiddleware object at 0x0000027C568F6E00>, functools...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725203, message=Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(...
+                 └ functools.partial(<aiogram.fsm.middleware.FSMContextMiddleware object at 0x0000027C568F6E90>, <function TelegramEventObserver...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\fsm\middleware.py", line 39, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725203, message=Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(...
+                 └ <function TelegramEventObserver.trigger at 0x0000027C5693FEB0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                 │             └ Update(update_id=251725203, message=Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(...
+                 └ <function CallableMixin.call at 0x0000027C5693FE20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<bound method Dispatcher._listen_update of <Dispatcher '0x27c5682da80'>>, Update(update_id=251725203, messa...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 275, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+                 │    │                           │                  │        └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                 │    │                           │                  └ Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(UTC)), chat=Chat(id=5688885462, type...
+                 │    │                           └ 'message'
+                 │    └ <function Router.propagate_event at 0x0000027C56733C70>
+                 └ <Dispatcher '0x27c5682da80'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+                 │        │                     │               │           └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                 │        │                     │               └ Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(UTC)), chat=Chat(id=5688885462, type...
+                 │        │                     └ <function Router.propagate_event.<locals>._wrapped at 0x0000027C5693FBE0>
+                 │        └ <function TelegramEventObserver.wrap_outer_middleware at 0x0000027C567330A0>
+                 └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000027C568F5180>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+                 │    └ <function Router._propagate_event at 0x0000027C56733D00>
+                 └ <Dispatcher '0x27c5682da80'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 136, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+                     │        │       │        └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                     │        │       └ Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(UTC)), chat=Chat(id=5688885462, type...
+                     │        └ <function TelegramEventObserver.trigger at 0x0000027C567331C0>
+                     └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000027C568F5180>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                 │             └ Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(UTC)), chat=Chat(id=5688885462, type...
+                 └ functools.partial(<middlewares.antiflood.ThrottlingMiddleware object at 0x0000027C568F7490>, <function CallableMixin.call at ...
+
+  File "D:\Telegram Apps\islamic_bot\middlewares\antiflood.py", line 27, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x27c5682da80'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000027C5673DB70>,), 'bot': <aiogra...
+                 │       └ Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(UTC)), chat=Chat(id=5688885462, type...
+                 └ <function CallableMixin.call at 0x0000027C5693E5F0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<function search_questions at 0x0000027C5694F9A0>, Message(message_id=35396, date=datetime.datetime(2023, 1...
+
+  File "D:\Telegram Apps\islamic_bot\handlers\users\start_command.py", line 15, in search_questions
+    search_result = await islom_uz.search_topic(message)
+                          │        │            └ Message(message_id=35396, date=datetime.datetime(2023, 11, 18, 15, 20, 33, tzinfo=TzInfo(UTC)), chat=Chat(id=5688885462, type...
+                          │        └ <function IslomUz.search_topic at 0x0000027C5696DFC0>
+                          └ <data.search_questions.IslomUz object at 0x0000027C568F7010>
+
+  File "D:\Telegram Apps\islamic_bot\data\search_questions.py", line 38, in search_topic
+    json_data = self.__convert_json()
+                └ <data.search_questions.IslomUz object at 0x0000027C568F7010>
+
+  File "D:\Telegram Apps\islamic_bot\data\search_questions.py", line 33, in __convert_json
+    return json.loads(self.content_text)
+           │    │     │    └ '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="utf-8">\n        <meta name="viewport" content="width=...
+           │    │     └ <data.search_questions.IslomUz object at 0x0000027C568F7010>
+           │    └ <function loads at 0x0000027C51DA5990>
+           └ <module 'json' from 'C:\\Users\\isaye\\AppData\\Local\\Programs\\Python\\Python310\\lib\\json\\__init__.py'>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           │                │      └ '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="utf-8">\n        <meta name="viewport" content="width=...
+           │                └ <function JSONDecoder.decode at 0x0000027C51DA5240>
+           └ <json.decoder.JSONDecoder object at 0x0000027C51D76BC0>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               │    │          │      │  └ '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="utf-8">\n        <meta name="viewport" content="width=...
+               │    │          │      └ <built-in method match of re.Pattern object at 0x0000027C51BF1E50>
+               │    │          └ '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="utf-8">\n        <meta name="viewport" content="width=...
+               │    └ <function JSONDecoder.raw_decode at 0x0000027C51DA52D0>
+               └ <json.decoder.JSONDecoder object at 0x0000027C51D76BC0>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+          │                                  └ '<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <meta charset="utf-8">\n        <meta name="viewport" content="width=...
+          └ <class 'json.decoder.JSONDecodeError'>
+
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2023-11-18 20:21:42.959 | INFO     | __main__:<module>:31 - This bot successfully stopped!
+2023-11-18 20:24:13.545 | ERROR    | handlers.get_errors:error_handler:12 - Telegram server says - Bad Request: MESSAGE_TOO_LONG
+Traceback (most recent call last):
+
+  File "D:\Telegram Apps\islamic_bot\app.py", line 29, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x00000193AFC64430>
+    │       └ <function run at 0x00000193AAE8B7F0>
+    └ <module 'asyncio' from 'C:\\Users\\isaye\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x00000193AFBB7290>
+           │    └ <function BaseEventLoop.run_until_complete at 0x00000193AAE95240>
+           └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x00000193AAF59CF0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000193AAE96CB0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1906, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000193AADF6200>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 308, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+                     │    │           │    │         └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,)}
+                     │    │           │    └ Update(update_id=251725209, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                     │    │           └ <aiogram.client.bot.Bot object at 0x00000193AF44EF20>
+                     │    └ <function Dispatcher.feed_update at 0x00000193AFA78670>
+                     └ <Dispatcher '0x193afb4df60'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 157, in feed_update
+    response = await self.update.wrap_outer_middleware(
+                     │    │      └ <function TelegramEventObserver.wrap_outer_middleware at 0x00000193AFA570A0>
+                     │    └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x00000193AFC1B0D0>
+                     └ <Dispatcher '0x193afb4df60'>
+
+> File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725209, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ functools.partial(<aiogram.dispatcher.middlewares.user_context.UserContextMiddleware object at 0x00000193AFC1B310>, functools...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725209, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ functools.partial(<aiogram.fsm.middleware.FSMContextMiddleware object at 0x00000193AFC1B400>, <function TelegramEventObserver...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\fsm\middleware.py", line 39, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725209, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ <function TelegramEventObserver.trigger at 0x00000193AFC66A70>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,), 'bot': <aiogra...
+                 │             └ Update(update_id=251725209, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ <function CallableMixin.call at 0x00000193AFC67E20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<bound method Dispatcher._listen_update of <Dispatcher '0x193afb4df60'>>, Update(update_id=251725209, messa...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 275, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+                 │    │                           │                  │        └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,), 'bot': <aiogra...
+                 │    │                           │                  └ CallbackQuery(id='5986832940513736923', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 │    │                           └ 'callback_query'
+                 │    └ <function Router.propagate_event at 0x00000193AFA57C70>
+                 └ <Dispatcher '0x193afb4df60'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+                 │        │                     │               │           └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,), 'bot': <aiogra...
+                 │        │                     │               └ CallbackQuery(id='5986832940513736923', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 │        │                     └ <function Router.propagate_event.<locals>._wrapped at 0x00000193ADEA92D0>
+                 │        └ <function TelegramEventObserver.wrap_outer_middleware at 0x00000193AFA570A0>
+                 └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x00000193AFC1A470>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+                 │    └ <function Router._propagate_event at 0x00000193AFA57D00>
+                 └ <Dispatcher '0x193afb4df60'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 136, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+                     │        │       │        └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,), 'bot': <aiogra...
+                     │        │       └ CallbackQuery(id='5986832940513736923', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                     │        └ <function TelegramEventObserver.trigger at 0x00000193AFA571C0>
+                     └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x00000193AFC1A470>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x193afb4df60'>, 'bots': (<aiogram.client.bot.Bot object at 0x00000193AF44EF20>,), 'bot': <aiogra...
+                 │             └ CallbackQuery(id='5986832940513736923', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 └ <function CallableMixin.call at 0x00000193ADEA9240>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<function answer_info at 0x00000193AFC77A30>, CallbackQuery(id='5986832940513736923', from_user=User(id=568...
+
+  File "D:\Telegram Apps\islamic_bot\handlers\users\start_command.py", line 33, in answer_info
+    await call.message.edit_text(text=
+          │    │       └ <function Message.edit_text at 0x00000193AC229E10>
+          │    └ Message(message_id=35409, date=datetime.datetime(2023, 11, 18, 15, 23, 52, tzinfo=TzInfo(UTC)), chat=Chat(id=5688885462, type...
+          └ CallbackQuery(id='5986832940513736923', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+                 │   └ EditMessageText(text='Savol:\nБисмиллахир рохманир рохийм. Алхамду лиллахи роббил аламийн. Вассолату вассаламу ала хойри холк...
+                 └ <aiogram.client.bot.Bot object at 0x00000193AF44EF20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\bot.py", line 432, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+                 │    │       │     │               └ None
+                 │    │       │     └ EditMessageText(text='Savol:\nБисмиллахир рохманир рохийм. Алхамду лиллахи роббил аламийн. Вассолату вассаламу ала хойри холк...
+                 │    │       └ <aiogram.client.bot.Bot object at 0x00000193AF44EF20>
+                 │    └ <aiogram.client.session.aiohttp.AiohttpSession object at 0x00000193AFB4E590>
+                 └ <aiogram.client.bot.Bot object at 0x00000193AF44EF20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\base.py", line 257, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+           │    │                   │          │    └ EditMessageText(text='Savol:\nБисмиллахир рохманир рохийм. Алхамду лиллахи роббил аламийн. Вассолату вассаламу ала хойри холк...
+           │    │                   │          └ <aiogram.client.bot.Bot object at 0x00000193AF44EF20>
+           │    │                   └ functools.partial(<bound method AiohttpSession.make_request of <aiogram.client.session.aiohttp.AiohttpSession object at 0x000...
+           │    └ ~TelegramType
+           └ <function cast at 0x00000193AAE6CAF0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\aiohttp.py", line 175, in make_request
+    response = self.check_response(
+               │    └ <function BaseSession.check_response at 0x00000193AFA083A0>
+               └ <aiogram.client.session.aiohttp.AiohttpSession object at 0x00000193AFB4E590>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+          │                         │               └ 'Bad Request: MESSAGE_TOO_LONG'
+          │                         └ EditMessageText(text='Savol:\nБисмиллахир рохманир рохийм. Алхамду лиллахи роббил аламийн. Вассолату вассаламу ала хойри холк...
+          └ <class 'aiogram.exceptions.TelegramBadRequest'>
+
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: MESSAGE_TOO_LONG
+2023-11-18 20:24:27.043 | INFO     | __main__:<module>:31 - This bot successfully stopped!
+2023-11-18 20:29:56.524 | ERROR    | handlers.get_errors:error_handler:12 - Telegram server says - Bad Request: MESSAGE_TOO_LONG
+Traceback (most recent call last):
+
+  File "D:\Telegram Apps\islamic_bot\app.py", line 29, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x0000022299D1C430>
+    │       └ <function run at 0x0000022294F5B7F0>
+    └ <module 'asyncio' from 'C:\\Users\\isaye\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x0000022299C77290>
+           │    └ <function BaseEventLoop.run_until_complete at 0x0000022294F65240>
+           └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000022295019CF0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000022294F66CB0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1906, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000022294EC6200>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 308, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+                     │    │           │    │         └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,)}
+                     │    │           │    └ Update(update_id=251725213, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                     │    │           └ <aiogram.client.bot.Bot object at 0x000002229950EF20>
+                     │    └ <function Dispatcher.feed_update at 0x0000022299B38670>
+                     └ <Dispatcher '0x22299c0dea0'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 157, in feed_update
+    response = await self.update.wrap_outer_middleware(
+                     │    │      └ <function TelegramEventObserver.wrap_outer_middleware at 0x0000022299B130A0>
+                     │    └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000022299CD6C20>
+                     └ <Dispatcher '0x22299c0dea0'>
+
+> File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725213, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ functools.partial(<aiogram.dispatcher.middlewares.user_context.UserContextMiddleware object at 0x0000022299CD6E60>, functools...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725213, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ functools.partial(<aiogram.fsm.middleware.FSMContextMiddleware object at 0x0000022299CD6EF0>, <function TelegramEventObserver...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\fsm\middleware.py", line 39, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725213, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ <function TelegramEventObserver.trigger at 0x0000022299D1CC10>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,), 'bot': <aiogra...
+                 │             └ Update(update_id=251725213, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ <function CallableMixin.call at 0x0000022299D1FBE0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<bound method Dispatcher._listen_update of <Dispatcher '0x22299c0dea0'>>, Update(update_id=251725213, messa...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 275, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+                 │    │                           │                  │        └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,), 'bot': <aiogra...
+                 │    │                           │                  └ CallbackQuery(id='5986832937987345975', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 │    │                           └ 'callback_query'
+                 │    └ <function Router.propagate_event at 0x0000022299B13C70>
+                 └ <Dispatcher '0x22299c0dea0'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+                 │        │                     │               │           └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,), 'bot': <aiogra...
+                 │        │                     │               └ CallbackQuery(id='5986832937987345975', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 │        │                     └ <function Router.propagate_event.<locals>._wrapped at 0x0000022297F68310>
+                 │        └ <function TelegramEventObserver.wrap_outer_middleware at 0x0000022299B130A0>
+                 └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000022299CD5FC0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+                 │    └ <function Router._propagate_event at 0x0000022299B13D00>
+                 └ <Dispatcher '0x22299c0dea0'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 136, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+                     │        │       │        └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,), 'bot': <aiogra...
+                     │        │       └ CallbackQuery(id='5986832937987345975', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                     │        └ <function TelegramEventObserver.trigger at 0x0000022299B131C0>
+                     └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000022299CD5FC0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x22299c0dea0'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002229950EF20>,), 'bot': <aiogra...
+                 │             └ CallbackQuery(id='5986832937987345975', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 └ <function CallableMixin.call at 0x0000022297F68B80>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<function answer_info at 0x0000022299D2BA30>, CallbackQuery(id='5986832937987345975', from_user=User(id=568...
+
+  File "D:\Telegram Apps\islamic_bot\handlers\users\start_command.py", line 36, in answer_info
+    await call.answer(text=text)
+          │    │           └ 'Savol:\nБисмиллаҳир роҳманир роҳийм.              Ассалому алайкум Муҳтарам Шайх ҳазратлари. Сизга бир савол билан мурожаат ...
+          │    └ <function CallbackQuery.answer at 0x0000022296459120>
+          └ CallbackQuery(id='5986832937987345975', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+                 │   └ AnswerCallbackQuery(callback_query_id='5986832937987345975', text='Savol:\nБисмиллаҳир роҳманир роҳийм.              Ассалому...
+                 └ <aiogram.client.bot.Bot object at 0x000002229950EF20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\bot.py", line 432, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+                 │    │       │     │               └ None
+                 │    │       │     └ AnswerCallbackQuery(callback_query_id='5986832937987345975', text='Savol:\nБисмиллаҳир роҳманир роҳийм.              Ассалому...
+                 │    │       └ <aiogram.client.bot.Bot object at 0x000002229950EF20>
+                 │    └ <aiogram.client.session.aiohttp.AiohttpSession object at 0x0000022299C0E4D0>
+                 └ <aiogram.client.bot.Bot object at 0x000002229950EF20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\base.py", line 257, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+           │    │                   │          │    └ AnswerCallbackQuery(callback_query_id='5986832937987345975', text='Savol:\nБисмиллаҳир роҳманир роҳийм.              Ассалому...
+           │    │                   │          └ <aiogram.client.bot.Bot object at 0x000002229950EF20>
+           │    │                   └ functools.partial(<bound method AiohttpSession.make_request of <aiogram.client.session.aiohttp.AiohttpSession object at 0x000...
+           │    └ ~TelegramType
+           └ <function cast at 0x0000022294F3CAF0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\aiohttp.py", line 175, in make_request
+    response = self.check_response(
+               │    └ <function BaseSession.check_response at 0x0000022299AC83A0>
+               └ <aiogram.client.session.aiohttp.AiohttpSession object at 0x0000022299C0E4D0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+          │                         │               └ 'Bad Request: MESSAGE_TOO_LONG'
+          │                         └ AnswerCallbackQuery(callback_query_id='5986832937987345975', text='Savol:\nБисмиллаҳир роҳманир роҳийм.              Ассалому...
+          └ <class 'aiogram.exceptions.TelegramBadRequest'>
+
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: MESSAGE_TOO_LONG
+2023-11-18 20:30:10.685 | INFO     | __main__:<module>:31 - This bot successfully stopped!
+2023-11-18 20:52:42.779 | ERROR    | handlers.get_errors:error_handler:12 - IslomUz.__fetch_page() missing 1 required positional argument: 'url'
+Traceback (most recent call last):
+
+  File "D:\Telegram Apps\islamic_bot\app.py", line 29, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x000002938BB4E950>
+    │       └ <function run at 0x0000029386D6B7F0>
+    └ <module 'asyncio' from 'C:\\Users\\isaye\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x000002938B979CB0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x0000029386D75240>
+           └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000029386E29CF0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000029386D76CB0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1906, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000029386CD6200>
+    └ <Handle <TaskStepMethWrapper object at 0x000002938BB4AAD0>()>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x000002938BB4AAD0>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x000002938BB4AAD0>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x000002938BB4AAD0>()>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 308, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+                     │    │           │    │         └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,)}
+                     │    │           │    └ Update(update_id=251725220, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                     │    │           └ <aiogram.client.bot.Bot object at 0x000002938B8FEA40>
+                     │    └ <function Dispatcher.feed_update at 0x000002938B918670>
+                     └ <Dispatcher '0x2938b8fea70'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 157, in feed_update
+    response = await self.update.wrap_outer_middleware(
+                     │    │      └ <function TelegramEventObserver.wrap_outer_middleware at 0x000002938B8F30A0>
+                     │    └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x000002938B9EF7F0>
+                     └ <Dispatcher '0x2938b8fea70'>
+
+> File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725220, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ functools.partial(<aiogram.dispatcher.middlewares.user_context.UserContextMiddleware object at 0x000002938B9EFA30>, functools...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725220, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ functools.partial(<aiogram.fsm.middleware.FSMContextMiddleware object at 0x000002938B9EFAC0>, <function TelegramEventObserver...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\fsm\middleware.py", line 39, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725220, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ <function TelegramEventObserver.trigger at 0x000002938BB428C0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,), 'bot': <aiogra...
+                 │             └ Update(update_id=251725220, message=None, edited_message=None, channel_post=None, edited_channel_post=None, inline_query=None...
+                 └ <function CallableMixin.call at 0x000002938BB40DC0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<bound method Dispatcher._listen_update of <Dispatcher '0x2938b8fea70'>>, Update(update_id=251725220, messa...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 275, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+                 │    │                           │                  │        └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,), 'bot': <aiogra...
+                 │    │                           │                  └ CallbackQuery(id='5986832936645780531', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 │    │                           └ 'callback_query'
+                 │    └ <function Router.propagate_event at 0x000002938B8F3C70>
+                 └ <Dispatcher '0x2938b8fea70'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+                 │        │                     │               │           └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,), 'bot': <aiogra...
+                 │        │                     │               └ CallbackQuery(id='5986832936645780531', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 │        │                     └ <function Router.propagate_event.<locals>._wrapped at 0x000002938BB43370>
+                 │        └ <function TelegramEventObserver.wrap_outer_middleware at 0x000002938B8F30A0>
+                 └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x000002938B9EEB90>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+                 │    └ <function Router._propagate_event at 0x000002938B8F3D00>
+                 └ <Dispatcher '0x2938b8fea70'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 136, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+                     │        │       │        └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,), 'bot': <aiogra...
+                     │        │       └ CallbackQuery(id='5986832936645780531', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                     │        └ <function TelegramEventObserver.trigger at 0x000002938B8F31C0>
+                     └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x000002938B9EEB90>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x2938b8fea70'>, 'bots': (<aiogram.client.bot.Bot object at 0x000002938B8FEA40>,), 'bot': <aiogra...
+                 │             └ CallbackQuery(id='5986832936645780531', from_user=User(id=5688885462, is_bot=False, first_name='ds_code | 🇵🇸', last_name=None...
+                 └ <function CallableMixin.call at 0x000002938BB42F80>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<function answer_info at 0x000002938BB4ED40>, CallbackQuery(id='5986832936645780531', from_user=User(id=568...
+
+  File "D:\Telegram Apps\islamic_bot\handlers\users\start_command.py", line 51, in answer_info
+    answer_text = await IslomUz().get_info(question_url[1])
+                        │                  └ ['bank', '/s/322']
+                        └ <class 'data.search_questions.IslomUz'>
+
+  File "D:\Telegram Apps\islamic_bot\data\search_questions.py", line 45, in get_info
+    content_text = await self.__fetch_page()
+                         └ <data.search_questions.IslomUz object at 0x000002938BB3E3E0>
+
+TypeError: IslomUz.__fetch_page() missing 1 required positional argument: 'url'
+2023-11-18 20:53:00.449 | INFO     | __main__:<module>:31 - This bot successfully stopped!
+2023-11-19 08:32:11.814 | ERROR    | handlers.get_errors:error_handler:12 - Telegram server says - Bad Request: PEER_ID_INVALID
+Traceback (most recent call last):
+
+  File "D:\Telegram Apps\islamic_bot\app.py", line 29, in <module>
+    asyncio.run(main())
+    │       │   └ <function main at 0x0000019DECACE8C0>
+    │       └ <function run at 0x0000019DE7CAB7F0>
+    └ <module 'asyncio' from 'C:\\Users\\isaye\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object main at 0x0000019DEC8FDCB0>
+           │    └ <function BaseEventLoop.run_until_complete at 0x0000019DE7CB5240>
+           └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000019DE7D79CF0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000019DE7CB6CB0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1906, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000019DE7C16200>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\isaye\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 308, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+                     │    │           │    │         └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,)}
+                     │    │           │    └ Update(update_id=251725321, message=Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UT...
+                     │    │           └ <aiogram.client.bot.Bot object at 0x0000019DEC27AF20>
+                     │    └ <function Dispatcher.feed_update at 0x0000019DEC898670>
+                     └ <Dispatcher '0x19dec87fa60'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 157, in feed_update
+    response = await self.update.wrap_outer_middleware(
+                     │    │      └ <function TelegramEventObserver.wrap_outer_middleware at 0x0000019DEC8770A0>
+                     │    └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000019DEC96B760>
+                     └ <Dispatcher '0x19dec87fa60'>
+
+> File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725321, message=Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UT...
+                 └ functools.partial(<aiogram.dispatcher.middlewares.user_context.UserContextMiddleware object at 0x0000019DEC96B9A0>, functools...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725321, message=Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UT...
+                 └ functools.partial(<aiogram.fsm.middleware.FSMContextMiddleware object at 0x0000019DEC96BA30>, <function TelegramEventObserver...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\fsm\middleware.py", line 39, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                 │       └ Update(update_id=251725321, message=Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UT...
+                 └ <function TelegramEventObserver.trigger at 0x0000019DECCF4700>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                 │             └ Update(update_id=251725321, message=Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UT...
+                 └ <function CallableMixin.call at 0x0000019DECCF51B0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<bound method Dispatcher._listen_update of <Dispatcher '0x19dec87fa60'>>, Update(update_id=251725321, messa...
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 275, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+                 │    │                           │                  │        └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                 │    │                           │                  └ Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UTC)), chat=Chat(id=-1001360301028, ty...
+                 │    │                           └ 'message'
+                 │    └ <function Router.propagate_event at 0x0000019DEC877C70>
+                 └ <Dispatcher '0x19dec87fa60'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 116, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+                 │        │                     │               │           └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                 │        │                     │               └ Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UTC)), chat=Chat(id=-1001360301028, ty...
+                 │        │                     └ <function Router.propagate_event.<locals>._wrapped at 0x0000019DECCF5B40>
+                 │        └ <function TelegramEventObserver.wrap_outer_middleware at 0x0000019DEC8770A0>
+                 └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000019DEC969F00>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 111, in _wrapped
+    return await self._propagate_event(
+                 │    └ <function Router._propagate_event at 0x0000019DEC877D00>
+                 └ <Dispatcher '0x19dec87fa60'>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\router.py", line 136, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+                     │        │       │        └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                     │        │       └ Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UTC)), chat=Chat(id=-1001360301028, ty...
+                     │        └ <function TelegramEventObserver.trigger at 0x0000019DEC8771C0>
+                     └ <aiogram.dispatcher.event.telegram.TelegramEventObserver object at 0x0000019DEC969F00>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 120, in trigger
+    return await wrapped_inner(event, kwargs)
+                 │             │      └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                 │             └ Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UTC)), chat=Chat(id=-1001360301028, ty...
+                 └ functools.partial(<middlewares.antiflood.ThrottlingMiddleware object at 0x0000019DEC96BDC0>, <function CallableMixin.call at ...
+
+  File "D:\Telegram Apps\islamic_bot\middlewares\antiflood.py", line 27, in __call__
+    return await handler(event, data)
+                 │       │      └ {'dispatcher': <Dispatcher '0x19dec87fa60'>, 'bots': (<aiogram.client.bot.Bot object at 0x0000019DEC27AF20>,), 'bot': <aiogra...
+                 │       └ Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UTC)), chat=Chat(id=-1001360301028, ty...
+                 └ <function CallableMixin.call at 0x0000019DECCF5900>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 42, in call
+    return await wrapped()
+                 └ functools.partial(<function search_questions at 0x0000019DECADBC70>, Message(message_id=43475, date=datetime.datetime(2023, 1...
+
+  File "D:\Telegram Apps\islamic_bot\handlers\users\start_command.py", line 17, in search_questions
+    await bot.send_chat_action(message.from_user.id, 'typing')
+          │   │                │       │         └ 6972995375
+          │   │                │       └ User(id=6972995375, is_bot=False, first_name='Н.А.О', last_name=None, username=None, language_code=None, is_premium=None, add...
+          │   │                └ Message(message_id=43475, date=datetime.datetime(2023, 11, 19, 3, 32, 9, tzinfo=TzInfo(UTC)), chat=Chat(id=-1001360301028, ty...
+          │   └ <function Bot.send_chat_action at 0x0000019DEC82F6D0>
+          └ <aiogram.client.bot.Bot object at 0x0000019DEC27AF20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\bot.py", line 2266, in send_chat_action
+    return await self(call, request_timeout=request_timeout)
+                 │    │                     └ None
+                 │    └ SendChatAction(chat_id=6972995375, action='typing', message_thread_id=None)
+                 └ <aiogram.client.bot.Bot object at 0x0000019DEC27AF20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\bot.py", line 432, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+                 │    │       │     │               └ None
+                 │    │       │     └ SendChatAction(chat_id=6972995375, action='typing', message_thread_id=None)
+                 │    │       └ <aiogram.client.bot.Bot object at 0x0000019DEC27AF20>
+                 │    └ <aiogram.client.session.aiohttp.AiohttpSession object at 0x0000019DEC87EE00>
+                 └ <aiogram.client.bot.Bot object at 0x0000019DEC27AF20>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\base.py", line 257, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+           │    │                   │          │    └ SendChatAction(chat_id=6972995375, action='typing', message_thread_id=None)
+           │    │                   │          └ <aiogram.client.bot.Bot object at 0x0000019DEC27AF20>
+           │    │                   └ functools.partial(<bound method AiohttpSession.make_request of <aiogram.client.session.aiohttp.AiohttpSession object at 0x000...
+           │    └ ~TelegramType
+           └ <function cast at 0x0000019DE7C8CAF0>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\aiohttp.py", line 175, in make_request
+    response = self.check_response(
+               │    └ <function BaseSession.check_response at 0x0000019DEC82C3A0>
+               └ <aiogram.client.session.aiohttp.AiohttpSession object at 0x0000019DEC87EE00>
+
+  File "C:\Users\isaye\.virtualenvs\islamic_bot-9GHtNYuv\lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+          │                         │               └ 'Bad Request: PEER_ID_INVALID'
+          │                         └ SendChatAction(chat_id=6972995375, action='typing', message_thread_id=None)
+          └ <class 'aiogram.exceptions.TelegramBadRequest'>
+
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: PEER_ID_INVALID
+2023-11-19 08:34:26.758 | INFO     | __main__:<module>:31 - This bot successfully stopped!
